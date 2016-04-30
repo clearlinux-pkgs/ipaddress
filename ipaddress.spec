@@ -4,7 +4,7 @@
 #
 Name     : ipaddress
 Version  : 1.0.16
-Release  : 12
+Release  : 13
 URL      : https://pypi.python.org/packages/source/i/ipaddress/ipaddress-1.0.16.tar.gz
 Source0  : https://pypi.python.org/packages/source/i/ipaddress/ipaddress-1.0.16.tar.gz
 Summary  : IPv4/IPv6 manipulation library
