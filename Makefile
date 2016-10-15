@@ -1,5 +1,5 @@
 PKG_NAME := ipaddress
-URL := https://pypi.python.org/packages/source/i/ipaddress/ipaddress-1.0.16.tar.gz
+URL := http://pypi.debian.net/ipaddress/ipaddress-1.0.17.tar.gz
 ARCHIVES :=
 
 include ../common/Makefile.common
