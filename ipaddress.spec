@@ -4,12 +4,13 @@
 #
 Name     : ipaddress
 Version  : 1.0.18
-Release  : 23
+Release  : 24
 URL      : http://pypi.debian.net/ipaddress/ipaddress-1.0.18.tar.gz
 Source0  : http://pypi.debian.net/ipaddress/ipaddress-1.0.18.tar.gz
 Summary  : IPv4/IPv6 manipulation library
 Group    : Development/Tools
 License  : Python-2.0
+Requires: ipaddress-legacypython
 Requires: ipaddress-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -22,9 +23,18 @@ ipaddress
 =========
 Python 3.3+'s [ipaddress](http://docs.python.org/dev/library/ipaddress) for Python 2.6, 2.7, 3.2.
 
+%package legacypython
+Summary: legacypython components for the ipaddress package.
+Group: Default
+
+%description legacypython
+legacypython components for the ipaddress package.
+
+
 %package python
 Summary: python components for the ipaddress package.
 Group: Default
+Requires: ipaddress-legacypython
 
 %description python
 python components for the ipaddress package.
@@ -38,7 +48,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503093800
+export SOURCE_DATE_EPOCH=1505004054
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -48,7 +58,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python3 test_ipaddress.py || :
 %install
-export SOURCE_DATE_EPOCH=1503093800
+export SOURCE_DATE_EPOCH=1505004054
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -59,7 +69,10 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
