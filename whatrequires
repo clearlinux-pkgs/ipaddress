@@ -1,1 +1,9 @@
 # This file contains recursive sources that require this package
+cryptography
+ecdsa
+keyring
+ndg_httpsclient
+paramiko
+pyOpenSSL
+secretstorage
+urllib3

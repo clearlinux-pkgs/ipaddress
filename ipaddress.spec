@@ -4,13 +4,14 @@
 #
 Name     : ipaddress
 Version  : 1.0.18
-Release  : 24
+Release  : 25
 URL      : http://pypi.debian.net/ipaddress/ipaddress-1.0.18.tar.gz
 Source0  : http://pypi.debian.net/ipaddress/ipaddress-1.0.18.tar.gz
 Summary  : IPv4/IPv6 manipulation library
 Group    : Development/Tools
 License  : Python-2.0
 Requires: ipaddress-legacypython
+Requires: ipaddress-python3
 Requires: ipaddress-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -26,6 +27,7 @@ Python 3.3+'s [ipaddress](http://docs.python.org/dev/library/ipaddress) for Pyth
 %package legacypython
 Summary: legacypython components for the ipaddress package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the ipaddress package.
@@ -35,9 +37,19 @@ legacypython components for the ipaddress package.
 Summary: python components for the ipaddress package.
 Group: Default
 Requires: ipaddress-legacypython
+Requires: ipaddress-python3
 
 %description python
 python components for the ipaddress package.
+
+
+%package python3
+Summary: python3 components for the ipaddress package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the ipaddress package.
 
 
 %prep
@@ -48,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505004054
+export SOURCE_DATE_EPOCH=1506875953
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -58,7 +70,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python3 test_ipaddress.py || :
 %install
-export SOURCE_DATE_EPOCH=1505004054
+export SOURCE_DATE_EPOCH=1506875953
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -74,5 +86,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
