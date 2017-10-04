@@ -4,7 +4,7 @@
 #
 Name     : ipaddress
 Version  : 1.0.18
-Release  : 25
+Release  : 26
 URL      : http://pypi.debian.net/ipaddress/ipaddress-1.0.18.tar.gz
 Source0  : http://pypi.debian.net/ipaddress/ipaddress-1.0.18.tar.gz
 Summary  : IPv4/IPv6 manipulation library
@@ -60,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1506875953
+export SOURCE_DATE_EPOCH=1507155256
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -70,7 +70,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python3 test_ipaddress.py || :
 %install
-export SOURCE_DATE_EPOCH=1506875953
+export SOURCE_DATE_EPOCH=1507155256
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
