@@ -4,7 +4,7 @@
 #
 Name     : ipaddress
 Version  : 1.0.19
-Release  : 28
+Release  : 29
 URL      : http://pypi.debian.net/ipaddress/ipaddress-1.0.19.tar.gz
 Source0  : http://pypi.debian.net/ipaddress/ipaddress-1.0.19.tar.gz
 Summary  : IPv4/IPv6 manipulation library
