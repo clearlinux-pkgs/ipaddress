@@ -4,13 +4,12 @@
 #
 Name     : ipaddress
 Version  : 1.0.19
-Release  : 30
+Release  : 31
 URL      : http://pypi.debian.net/ipaddress/ipaddress-1.0.19.tar.gz
 Source0  : http://pypi.debian.net/ipaddress/ipaddress-1.0.19.tar.gz
 Summary  : IPv4/IPv6 manipulation library
 Group    : Development/Tools
 License  : Python-2.0
-Requires: ipaddress-legacypython
 Requires: ipaddress-python3
 Requires: ipaddress-python
 BuildRequires : pbr
@@ -36,7 +35,6 @@ legacypython components for the ipaddress package.
 %package python
 Summary: python components for the ipaddress package.
 Group: Default
-Requires: ipaddress-legacypython
 Requires: ipaddress-python3
 
 %description python
@@ -60,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1513615728
+export SOURCE_DATE_EPOCH=1519338704
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -70,7 +68,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python3 test_ipaddress.py || :
 %install
-export SOURCE_DATE_EPOCH=1513615728
+export SOURCE_DATE_EPOCH=1519338704
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
