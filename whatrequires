@@ -2,6 +2,7 @@
 Cython
 Keras
 PyWavelets
+R-fastcluster
 Sphinx
 Theano
 acme
@@ -18,13 +19,16 @@ ecdsa
 gensim
 gevent
 h5py
+hyperscan
 ipykernel
 ipython
 ipython-sql
+josepy
 jupyter
 jupyter-notebook-gist
 jupyter_client
-keyring
+jupyterlab
+jupyterlab_launcher
 libdnf
 llvm
 matplotlib
