@@ -14,7 +14,7 @@ Requires: ipaddress-python3
 Requires: ipaddress-python
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
