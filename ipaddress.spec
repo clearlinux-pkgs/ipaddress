@@ -4,7 +4,7 @@
 #
 Name     : ipaddress
 Version  : 1.0.22
-Release  : 39
+Release  : 40
 URL      : http://pypi.debian.net/ipaddress/ipaddress-1.0.22.tar.gz
 Source0  : http://pypi.debian.net/ipaddress/ipaddress-1.0.22.tar.gz
 Summary  : IPv4/IPv6 manipulation library
@@ -16,8 +16,10 @@ Requires: ipaddress-python
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-core
+BuildRequires : python3-core
 BuildRequires : python3-dev
 BuildRequires : setuptools
+BuildRequires : setuptools-legacypython
 
 %description
 ipaddress
@@ -67,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530320881
+export SOURCE_DATE_EPOCH=1530372522
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -77,7 +79,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python3 test_ipaddress.py || :
 %install
-export SOURCE_DATE_EPOCH=1530320881
+export SOURCE_DATE_EPOCH=1530372522
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/ipaddress
 cp LICENSE %{buildroot}/usr/share/doc/ipaddress/LICENSE
