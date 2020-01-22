@@ -1,4 +1,11 @@
 # This file contains recursive sources that require this package
+cinder
+conda
 cryptography
-deprecated-cryptography
+docker-compose
 ifaddr
+mercurial
+openstacksdk
+pymongo
+python-manilaclient
+urllib3
