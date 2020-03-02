@@ -4,7 +4,7 @@
 #
 Name     : ipaddress
 Version  : 1.0.23
-Release  : 53
+Release  : 54
 URL      : https://files.pythonhosted.org/packages/b9/9a/3e9da40ea28b8210dd6504d3fe9fe7e013b62bf45902b458d1cdc3c34ed9/ipaddress-1.0.23.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b9/9a/3e9da40ea28b8210dd6504d3fe9fe7e013b62bf45902b458d1cdc3c34ed9/ipaddress-1.0.23.tar.gz
 Summary  : IPv4/IPv6 manipulation library
@@ -41,6 +41,7 @@ python components for the ipaddress package.
 Summary: python3 components for the ipaddress package.
 Group: Default
 Requires: python3-core
+Provides: pypi(ipaddress)
 
 %description python3
 python3 components for the ipaddress package.
@@ -55,7 +56,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579720808
+export SOURCE_DATE_EPOCH=1583158841
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "

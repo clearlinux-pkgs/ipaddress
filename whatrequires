@@ -8,4 +8,6 @@ mercurial
 openstacksdk
 pymongo
 python-manilaclient
+swift
+trustme
 urllib3
